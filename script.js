@@ -247,4 +247,4 @@ console.log(gameOver())
 
 
 
-setInterval(game,70) 
+setInterval(game,100) 
