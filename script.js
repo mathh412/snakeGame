@@ -1,4 +1,4 @@
-var tamanho = 20;
+var tamanho = 50;
 var position={x:5,y:3}
 var snake = [];
 var square = [];
@@ -57,7 +57,7 @@ if(!test2)
 
     if(last!=null)
     {
-      if(snake[i].y>=0 && snake[i].x>=0 && snake[i].y<=19 && snake[i].x<=19 )
+      if(snake[i].y>=0 && snake[i].x>=0 && snake[i].y<=(tamanho-1) && snake[i].x<=(tamanho-1) )
     square[snake[i].y][snake[i].x]=null;
     snake[i].x=snake[i-1].x
     snake[i].y=snake[i-1].y
@@ -76,7 +76,7 @@ if(!test2)
 }
     for(i=0;i<snakeTam;i++)
     {
-      if(snake[i].y>=0 && snake[i].x>=0 && snake[i].y<=19 && snake[i].x<=19 )
+      if(snake[i].y>=0 && snake[i].x>=0 && snake[i].y<=(tamanho-1) && snake[i].x<=(tamanho-1) )
       {
       if(i%35<5  && i<5)
       square[snake[i].y][snake[i].x]="rgb(0,"+(255/4*((i%5)))+",0)";
@@ -132,7 +132,7 @@ for(j=0;j<tamanho;j++)
    ctx.fillStyle=square[i][j];
    else
    ctx.fillStyle="rgb(185, 142, 169)"
- ctx.fillRect(50*j+1, 50*i+1, squareW-2, squareH-2);
+ ctx.fillRect((c.width/tamanho)*j+1, (c.height/tamanho)*i+1, squareW-2, squareH-2);
 }
 }
 }
@@ -142,14 +142,13 @@ function Food()
  var test=0;
 
  while(test==0){
-   rand = Math.floor(Math.random()*19)
+   rand = Math.floor(Math.random()*(tamanho-1))
  for(i=0;i<snakeTam;i++)
     {
     if (!(rand == snake[i].x || rand == snake[i].y))
       test=1;
     }
  }
-square[rand][rand]="rgb(255,0,255)"
 foodDraw = 1;
 }
 
@@ -238,6 +237,8 @@ function game()
          }
     map();
     test2=gameOver()
+    if(foodDraw)
+   square[rand][rand]="rgb(0, 0, 0)"
     
 console.log(gameOver())
 
@@ -247,4 +248,4 @@ console.log(gameOver())
 
 
 
-setInterval(game,100) 
+setInterval(game,70) 

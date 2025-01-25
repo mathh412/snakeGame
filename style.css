@@ -2,12 +2,14 @@
 body
 {
     background-color:rgb(00, 150, 00);
+    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #points
 {
 position: relative;
-left: 30%;
+left: 40%;
 }
 
 #gameover
@@ -16,8 +18,8 @@ left: 30%;
     position: relative;
     width: 200px;
     height: 50px;
-    top: 1050px;
-    left: 35%;
+    top: 750px;
+    left: 40%;
     opacity: 0;
 }
 
@@ -25,9 +27,8 @@ left: 30%;
 {
     font-size: 100pt;
     position: relative;
-    top: 300px;
-    left: 25%;
-    opacity: 100;
+    top: 20px;
+    left: 28%;
     color:red;
     opacity: 0;
 }
