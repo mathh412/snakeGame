@@ -57,7 +57,7 @@ if(!test2)
 
     if(last!=null)
     {
-      if(snake[i].y>=0 && snake[i].x>=0 && snake[i].y<=20 && snake[i].x<=20 )
+      if(snake[i].y>=0 && snake[i].x>=0 && snake[i].y<=19 && snake[i].x<=19 )
     square[snake[i].y][snake[i].x]=null;
     snake[i].x=snake[i-1].x
     snake[i].y=snake[i-1].y
@@ -76,7 +76,7 @@ if(!test2)
 }
     for(i=0;i<snakeTam;i++)
     {
-      if(snake[i].y>=0 && snake[i].x>=0 && snake[i].y<=20 && snake[i].x<=20 )
+      if(snake[i].y>=0 && snake[i].x>=0 && snake[i].y<=19 && snake[i].x<=19 )
       {
       if(i%35<5  && i<5)
       square[snake[i].y][snake[i].x]="rgb(0,"+(255/4*((i%5)))+",0)";
